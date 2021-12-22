@@ -1,0 +1,74 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://CardParts/AttackIcon.png" type="Texture" id=1]
+[ext_resource path="res://CardParts/DefenseIcon.png" type="Texture" id=2]
+[ext_resource path="res://CardParts/ImageFrame.png" type="Texture" id=3]
+[ext_resource path="res://CardParts/HealthIcon.png" type="Texture" id=4]
+[ext_resource path="res://CardParts/Background.png" type="Texture" id=5]
+[ext_resource path="res://CardParts/CardImages/Child.png" type="Texture" id=6]
+[ext_resource path="res://CardParts/CostIcon.png" type="Texture" id=7]
+[ext_resource path="res://Cards/BackOfCard.png" type="Texture" id=8]
+[ext_resource path="res://TextDisplay.tscn" type="PackedScene" id=9]
+[ext_resource path="res://CardDisplay.gd" type="Script" id=10]
+[ext_resource path="res://CardParts/EvolveTo.png" type="Texture" id=11]
+
+[node name="CardDisplay" type="Node2D"]
+script = ExtResource( 10 )
+
+[node name="Back" type="Sprite" parent="."]
+texture = ExtResource( 8 )
+centered = false
+
+[node name="Front" type="Node2D" parent="."]
+
+[node name="Background" type="Sprite" parent="Front"]
+texture = ExtResource( 5 )
+centered = false
+
+[node name="ImageFrame" type="Sprite" parent="Front"]
+position = Vector2( 6, 14 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="CostIcon" type="Sprite" parent="Front/ImageFrame"]
+position = Vector2( 106, 9 )
+texture = ExtResource( 7 )
+
+[node name="Image" type="Sprite" parent="Front/ImageFrame"]
+position = Vector2( 55, 48 )
+texture = ExtResource( 6 )
+
+[node name="AttackIcon" type="Sprite" parent="Front"]
+position = Vector2( 109, 163 )
+texture = ExtResource( 1 )
+
+[node name="TextDisplay" parent="Front/AttackIcon" instance=ExtResource( 9 )]
+position = Vector2( 5, -7 )
+
+[node name="DefenseIcon" type="Sprite" parent="Front"]
+position = Vector2( 59, 163 )
+texture = ExtResource( 2 )
+
+[node name="TextDisplay" parent="Front/DefenseIcon" instance=ExtResource( 9 )]
+position = Vector2( 10, -6 )
+
+[node name="HealthIcon" type="Sprite" parent="Front"]
+position = Vector2( 10, 163 )
+texture = ExtResource( 4 )
+
+[node name="TextDisplay" parent="Front/HealthIcon" instance=ExtResource( 9 )]
+position = Vector2( 8, -6 )
+
+[node name="Name" parent="Front" instance=ExtResource( 9 )]
+position = Vector2( 64, 4 )
+centered = true
+
+[node name="Modifier" type="Sprite" parent="Front"]
+position = Vector2( 11, 10 )
+
+[node name="Evolution" type="Sprite" parent="Front"]
+position = Vector2( 12, 120 )
+texture = ExtResource( 11 )
+
+[node name="TextDisplay" parent="Front/Evolution" instance=ExtResource( 9 )]
+position = Vector2( 13, -4 )
