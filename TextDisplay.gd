@@ -6,10 +6,6 @@ export var centered := false
 var text := "" setget set_text
 
 
-func _ready() -> void:
-	self.text = "the child"
-
-
 func set_text(value:String):
 	var w := 0
 	for i in get_child_count():

@@ -12,8 +12,15 @@
 [ext_resource path="res://CardDisplay.gd" type="Script" id=10]
 [ext_resource path="res://CardParts/EvolveTo.png" type="Texture" id=11]
 
-[node name="CardDisplay" type="Node2D"]
+[node name="CardDisplay" type="Button"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_right = 126.0
+margin_bottom = 176.0
 script = ExtResource( 10 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
 
 [node name="Back" type="Sprite" parent="."]
 texture = ExtResource( 8 )

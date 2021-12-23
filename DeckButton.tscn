@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Cards/BackOfCard.png" type="Texture" id=2]
+
+[node name="DeckButton" type="Button"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_right = 126.0
+margin_bottom = 176.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackOfCard" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+centered = false

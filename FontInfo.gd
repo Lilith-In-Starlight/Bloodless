@@ -1,8 +1,11 @@
 extends Node
 
 const big_numbers := {
+	"0" : preload("res://NumbersBig/0.png"),
 	"1" : preload("res://NumbersBig/1.png"),
 	"2" : preload("res://NumbersBig/2.png"),
+	"3" : preload("res://NumbersBig/3.png"),
+	"4" : preload("res://NumbersBig/4.png"),
 }
 
 var sprites := {}

@@ -1,6 +1,28 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
+[ext_resource path="res://DeckButton.tscn" type="PackedScene" id=2]
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Hand" type="Node2D" parent="."]
+position = Vector2( 79, 549 )
+
+[node name="DeckButton" parent="." instance=ExtResource( 2 )]
+margin_left = 809.0
+margin_top = 237.0
+margin_right = 935.0
+margin_bottom = 413.0
+
+[node name="DeckButton2" parent="." instance=ExtResource( 2 )]
+margin_left = 809.0
+margin_top = 42.0
+margin_right = 935.0
+margin_bottom = 218.0
+
+[connection signal="pressed" from="DeckButton" to="." method="_on_BloodDeckButton_pressed"]
+[connection signal="pressed" from="DeckButton2" to="." method="_on_DeckButton_pressed"]
