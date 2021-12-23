@@ -127,6 +127,10 @@ func _input(event: InputEvent) -> void:
 				if !player_turn:
 					var played := false
 					var p = bot_lanes[randi()%4]
+					if ai_state.blood < 1:
+						var rand_card :Card = CardManager.make_blood_flask()
+						p.card = rand_card
+					p.update_card()
 					while played == false:
 						p = bot_lanes[randi()%4]
 						var rand_card :Card = ai_state.hand[randi()%ai_state.hand.size()]
