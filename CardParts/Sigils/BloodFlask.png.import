@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/HealthIcon.png-79aa8c9bd2e1a29cf47a0965575155ab.stex"
+path="res://.import/BloodFlask.png-97805d64b311e0c65b89240a6adf3a15.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://CardParts/HealthIcon.png"
-dest_files=[ "res://.import/HealthIcon.png-79aa8c9bd2e1a29cf47a0965575155ab.stex" ]
+source_file="res://CardParts/Sigils/BloodFlask.png"
+dest_files=[ "res://.import/BloodFlask.png-97805d64b311e0c65b89240a6adf3a15.stex" ]
 
 [params]
 
