@@ -41,6 +41,10 @@ centered = false
 position = Vector2( 106, 9 )
 texture = ExtResource( 7 )
 
+[node name="TextDisplay2" parent="Front/ImageFrame/CostIcon" instance=ExtResource( 9 )]
+position = Vector2( 5, -4 )
+small_numbers = true
+
 [node name="Image" type="Sprite" parent="Front/ImageFrame"]
 position = Vector2( 55, 48 )
 texture = ExtResource( 6 )

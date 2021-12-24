@@ -4,6 +4,7 @@ class PlayerState:
 	var lane_knowledge := [null, null, null, null]
 	var hand := []
 	var blood := 0
+	var deck := []
 	var coins := 0
 
 const CardDisplay := preload("res://CardDisplay.tscn")
@@ -47,12 +48,19 @@ func _ready() -> void:
 		bot_lanes.append(c)
 		add_child(c)
 	
-	for i in 5:
-		player_state.hand.append(CardManager.cards[randi()%CardManager.cards.size()].duplicate())
-		ai_state.hand.append(CardManager.cards[randi()%CardManager.cards.size()].duplicate())
+	player_state.deck = CardManager.default_deck.duplicate(true)
+	player_state.deck.shuffle()
+	ai_state.deck = CardManager.default_deck2.duplicate(true)
+	ai_state.deck.shuffle()
 	
+	for i in 6:
+		player_state.hand.append(player_state.deck[0])
+		player_state.deck.remove(0)
+		
+	for i in 6:
+		ai_state.hand.append(ai_state.deck[0])
+		ai_state.deck.remove(0)
 	
-	player_state.hand.shuffle()
 	update_hand()
 
 
@@ -218,8 +226,10 @@ func _on_DeckButton_pressed() -> void:
 	var whostate := player_state
 	if not player_turn:
 		whostate = ai_state
-	var randcard :Card = CardManager.cards[randi()%CardManager.cards.size()].duplicate()
-	whostate.hand.append(randcard)
+	if whostate.deck.size() > 0 and whostate.hand.size() <= 6:
+		var randcard :Card = whostate.deck[0]
+		whostate.deck.remove(0)
+		whostate.hand.append(randcard)
 	update_hand()
 
 

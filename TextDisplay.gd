@@ -2,6 +2,7 @@ extends Node2D
 
 
 export var centered := false
+export var small_numbers := false
 
 var text := "" setget set_text
 
@@ -15,7 +16,7 @@ func set_text(value:String):
 		sprite.position.x = w
 		sprite.centered = false
 		if value[i] != " ":
-			var a := FontInfo.get_character(value[i])
+			var a := FontInfo.get_character(value[i], small_numbers)
 			sprite.texture = a
 			w += a.get_width() + 1
 			add_child(sprite)

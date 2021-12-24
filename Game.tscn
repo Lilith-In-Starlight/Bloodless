@@ -10,7 +10,7 @@ __meta__ = {
 }
 
 [node name="Hand" type="Node2D" parent="."]
-position = Vector2( 79, 549 )
+position = Vector2( 79, 517 )
 
 [node name="DeckButton" parent="." instance=ExtResource( 2 )]
 margin_left = 809.0

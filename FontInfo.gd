@@ -7,6 +7,10 @@ const big_numbers := {
 	"3" : preload("res://NumbersBig/3.png"),
 	"4" : preload("res://NumbersBig/4.png"),
 }
+const small_numbers := {
+	"2" : preload("res://NumberSmol/2.png"),
+	"3" : preload("res://NumberSmol/3.png"),
+}
 
 var sprites := {}
 
@@ -22,17 +26,25 @@ func _ready() -> void:
 		file = d.get_next()
 
 
-func get_character(c:String) -> Texture:
+func get_character(c:String, small_numbers := false) -> Texture:
 	var b := c.to_upper()
 	if b in sprites:
 		return sprites[b]
-	else:
+	if not small_numbers:
 		return get_big_number(c)
+	return get_small_number(c)
 
 
 func get_big_number(c:String) -> Texture:
 	if c in big_numbers:
 		return big_numbers[c]
+	else:
+		return sprites["NoSprite"]
+	
+
+func get_small_number(c:String) -> Texture:
+	if c in small_numbers:
+		return small_numbers[c]
 	else:
 		return sprites["NoSprite"]
 	

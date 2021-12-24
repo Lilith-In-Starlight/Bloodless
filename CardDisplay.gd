@@ -31,4 +31,16 @@ func update_card():
 		else:
 			$Front/Evolution.texture = null
 			$Front/Evolution/TextDisplay.text = ""
+		
+		if card.cost == 0:
+			$Front/ImageFrame/CostIcon.visible = false
+		elif card.cost == 1:
+			$Front/ImageFrame/CostIcon.visible = true
+			$Front/ImageFrame/CostIcon.position.x = 106
+			$Front/ImageFrame/CostIcon/TextDisplay2.visible = false
+		elif card.cost > 1:
+			$Front/ImageFrame/CostIcon.visible = true
+			$Front/ImageFrame/CostIcon.position.x = 96
+			$Front/ImageFrame/CostIcon/TextDisplay2.visible = true
+			$Front/ImageFrame/CostIcon/TextDisplay2.text = str(card.cost)
 
